@@ -22,7 +22,8 @@ app.add_middleware(
     allow_origins=["*"],
     allow_credentials= [
         "http://localhost:3000",
-        "*" 
+        "https://ai-document-platform.vercel.app",
+        "https://ai-document-platform-n9w0it8n7-diya-goswamis-projects.vercel.app"
     ],
     allow_methods=["*"],
     allow_headers=["*"],
