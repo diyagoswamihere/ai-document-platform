@@ -1,8 +1,6 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from app.routes import router as auth_router
 from app.routes.projects import router as projects_router
-from app.routes.ai_routes import router as ai_router
+from app.routes.ai_routes import router as ai_router 
 from app.config import get_settings
 from app.routes import router as auth_router
 from app.routes.projects import router as projects_router
