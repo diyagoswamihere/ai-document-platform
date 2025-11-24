@@ -1,11 +1,10 @@
-from app.routes import router as auth_router
-from app.routes.projects import router as projects_router
-from app.routes.ai_routes import router as ai_router 
-from app.config import get_settings
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.routes import router as auth_router
 from app.routes.projects import router as projects_router
 from app.routes.ai_routes import router as ai_router
-from app.routes.export import router as export_router
+from app.routes.export import router as export_router # Added last unique router
+from app.config import get_settings
 
 settings = get_settings()
 

@@ -4,7 +4,7 @@ from typing import List
 from pydantic import BaseModel
 from app.models import Section
 from app.database import get_db
-from app.routes import get_current_user
+from app.dependencies import get_current_user
 from app.models import User
 from app.services.ai_service import AIService
 from app.services.project_service import ProjectService
