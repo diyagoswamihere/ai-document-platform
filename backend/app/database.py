@@ -5,13 +5,22 @@ from app.config import get_settings
 
 settings = get_settings()
 
-# Create SQLAlchemy engine
-engine = create_engine(
-    settings.DATABASE_URL,
-    connect_args={"check_same_thread": False},  # Needed for SQLite
-    pool_pre_ping=True,  # Verify connections before using
-    echo=settings.DEBUG   # Log SQL queries in debug mode
-)
+# Check if using SQLite or PostgreSQL
+if settings.DATABASE_URL.startswith("sqlite"):
+    # SQLite configuration
+    engine = create_engine(
+        settings.DATABASE_URL,
+        connect_args={"check_same_thread": False},
+        pool_pre_ping=True,
+        echo=settings.DEBUG
+    )
+else:
+    # PostgreSQL configuration
+    engine = create_engine(
+        settings.DATABASE_URL,
+        pool_pre_ping=True,
+        echo=settings.DEBUG
+    )
 
 # Create session factory
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
