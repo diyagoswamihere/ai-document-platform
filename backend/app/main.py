@@ -19,12 +19,12 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials= [
+    allow_origins=[
         "http://localhost:3000",
         "https://ai-document-platform.vercel.app",
         "https://ai-document-platform-n9w0it8n7-diya-goswamis-projects.vercel.app"
     ],
+    allow_credentials=True, 
     allow_methods=["*"],
     allow_headers=["*"],
 )
