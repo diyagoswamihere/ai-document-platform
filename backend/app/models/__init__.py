@@ -103,3 +103,7 @@ class Comment(Base):
     # Relationships
     section = relationship("Section", back_populates="comments")
     user = relationship("User", back_populates="comments")
+
+
+# Export all models
+__all__ = ["User", "Project", "Section", "Refinement", "Feedback", "Comment"]
